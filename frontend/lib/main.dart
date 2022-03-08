@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/screens/onboarding/onboarding.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Welcome to FLutter'),
-        ),
-        body: Center(
-          child: Text('Hello World'),
-        ),
+      debugShowCheckedModeBanner: false,
+      title: 'Learning Zone',
+      home: Builder(
+        builder: (BuildContext context) {
+          var screenHeight = MediaQuery.of(context).size.height;
+          return Onboarding(screenHeight: screenHeight);
+        },
       ),
     );
   }
